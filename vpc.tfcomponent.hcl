@@ -1,0 +1,5 @@
+component "vpc" {
+  source = "./"
+
+  inputs = {}
+}
