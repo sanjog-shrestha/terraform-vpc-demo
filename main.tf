@@ -16,9 +16,11 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "eu-west-2"
-}
+# Provider blocks are not allowed in stack/component modules when using Terraform Cloud and the new HCL stack/component structure.
+# Instead, provider configuration must be passed into the component/module from the stack using the "providers" argument,
+# and not included directly in the component/module (i.e., no 'provider "aws" { ... }' allowed here).
+#
+# Remove this provider block from the component/module. The provider will be configured from your stack/parent config.
 
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"
