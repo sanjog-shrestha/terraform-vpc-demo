@@ -1,7 +1,13 @@
-stack {}
+stack {
+  name        = "terraform-vpc-demo"
+  description = "Simple VPC stack"
+}
 
-deployment "default" {}
+deployment "default" {
+  inputs = {}
+}
 
 component "vpc" {
-  source = "./vpc"
+  source     = "./"
+  deployment = deployment.default
 }
