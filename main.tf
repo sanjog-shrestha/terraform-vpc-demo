@@ -20,7 +20,8 @@ terraform {
 # Instead, provider configuration must be passed into the component/module from the stack using the "providers" argument,
 # and not included directly in the component/module (i.e., no 'provider "aws" { ... }' allowed here).
 #
-# Remove this provider block from the component/module. The provider will be configured from your stack/parent config.
+# Remove any provider block or explicit configuration from this component/module.
+# The provider will be configured from the stack/parent via the "providers" argument.
 
 resource "aws_vpc" "main" {
   cidr_block = "10.0.0.0/16"

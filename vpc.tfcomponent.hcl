@@ -2,7 +2,7 @@ component "vpc" {
   source = "./"
 
   providers = {
-    aws = "aws"
+    aws = aws
   }
 
   inputs = {}
