@@ -4,12 +4,9 @@ stack {
 }
 
 deployment "default" {
-  inputs = {}
 }
 
 component "vpc" {
-  source     = "."
-  deployments = {
-    default = {}
-  }
+  source     = "./"
+
 }
