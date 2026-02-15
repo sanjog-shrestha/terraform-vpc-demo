@@ -8,6 +8,8 @@ deployment "default" {
 }
 
 component "vpc" {
-  source     = "./"
-  deployment = deployment.default
+  source     = "."
+  deployments = {
+    default = {}
+  }
 }
