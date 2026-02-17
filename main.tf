@@ -13,6 +13,15 @@ provider "aws" {
   region = "eu-west-2"
 }
 
+resource "aws_sqs_queue" "queue" {
+  name = var.queue_name
+}
+
+variable "queue_name" {
+  type        = string
+  description = "Name of the SQS queue"
+}
+
 resource "aws_vpc" "main" {
   cidr_block = "10.1.0.0/16"
 
